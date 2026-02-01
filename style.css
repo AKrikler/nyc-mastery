@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+}
+
+body { display: flex; flex-direction: column; }
+header { z-index: 2000; }
+main { flex: 1; display: flex; position: relative; }
+#map-area { height: 100%; width: 100%; }
+#map { height: 100%; width: 100%; }
+
+#sidebar {
+    width: 320px;
+    height: 100%;
+    overflow-y: auto;
+    background: white;
+    z-index: 3000;
+    transition: transform 0.3s ease;
+}
+
+/* iPhone & Mobile specific adjustments */
+@media (max-width: 768px) {
+    #sidebar {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        transform: translateX(100%); /* Hidden by default on mobile */
+    }
+    #sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+.task-check:checked + span {
+    color: #adb5bd;
+    text-decoration: line-through;
+}
+
+.x-small { font-size: 0.75rem; }
