@@ -437,7 +437,7 @@ window.resetGame = function() {
 };
 
 // Helpers
-function formatName(s) {
+function formatName(str) {
     if (str.length > 20) return str; 
     
     if (name === "Brooklyn Heights") return "Brooklyn";
